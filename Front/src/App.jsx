@@ -9,6 +9,8 @@ import { axiosInstance } from "./lib/axios"
 import { Toaster } from "react-hot-toast"
 import NetworkPage from "./pages/NetworkPage"
 
+import ProfilePage from "./pages/ProfilePage"
+
 
 function App() {
 
@@ -44,7 +46,7 @@ function App() {
       
         <Route path='/network' element={authUser ? <NetworkPage /> : <Navigate to={"/login"} />} />
        
-				
+				<Route path='/profile/:username' element={authUser ? <ProfilePage /> : <Navigate to={"/login"} />} />
       </Routes>
       <Toaster/>
     </Layout>

@@ -24,7 +24,7 @@ const NetworkPage = () => {
 				<Sidebar user={user} />
 			</div>
 			<div className='col-span-1 lg:col-span-3'>
-				<div className='bg-secondary rounded-lg shadow p-6 mb-6'>
+				<div className='bg-neutral-200 rounded-lg shadow p-6 mb-6'>
 					<h1 className='text-2xl font-bold mb-6'>My Network</h1>
 
 					{connectionRequests?.data?.length > 0 ? (
