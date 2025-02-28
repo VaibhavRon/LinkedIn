@@ -7,6 +7,9 @@ import { Navigate, Route, Routes } from "react-router-dom"
 import { toast } from "react-hot-toast"
 import { axiosInstance } from "./lib/axios"
 import { Toaster } from "react-hot-toast"
+import NetworkPage from "./pages/NetworkPage"
+
+
 function App() {
 
   const {data:authUser,isLoading}=useQuery({
@@ -38,7 +41,10 @@ function App() {
         <Route path='/' element={authUser ? <Home /> : <Navigate to={"/login"} />} />
 				<Route path='/signup' element={!authUser ? <Signup /> : <Navigate to={"/"} />} />
 				<Route path='/login' element={!authUser ? <Login /> : <Navigate to={"/"} />} />
-        
+      
+        <Route path='/network' element={authUser ? <NetworkPage /> : <Navigate to={"/login"} />} />
+       
+				
       </Routes>
       <Toaster/>
     </Layout>
